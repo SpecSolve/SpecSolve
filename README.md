@@ -1,4 +1,4 @@
-# SpecSolve
+SpecSolve
 ====================
 
 A MATLAB implementation for computing spectral measures of self-adjoint operators [1]. The code supports
