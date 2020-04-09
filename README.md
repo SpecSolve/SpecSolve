@@ -1,7 +1,7 @@
 SpecSolve
 ====================
 
-A MATLAB implementation for computing spectral measures of self-adjoint operators [1]. The code supports
+A MATLAB implementation for computing spectral measures of self-adjoint operators [1] written by Matt Colbrook and Andrew Horning. The code supports
 
 (1) Differential operators on the real line, with variable coefficients,
 
