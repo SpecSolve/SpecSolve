@@ -29,7 +29,7 @@ Computes a smoothed approximation to the spectral measure of a lattice operator 
 
 rseMeas()
 ===================
-Computes a smoothed approximation to the spectral measure of radial Schrodinger operators. See **radialSchrodinger_example.m** for a worked example.
+Computes a smoothed approximation to the spectral measure of radial Schrodinger operators. See `radialSchrodinger_example.m` for a worked example.
 
 References
 ===================
