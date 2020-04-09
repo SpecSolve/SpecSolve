@@ -9,7 +9,7 @@ A MATLAB implementation for computing spectral measures of self-adjoint operator
 
 (3) Infinite matrices, with finite bandwidth or rapid off-diagonal decay [2].
 
-See `Example_*.m`  files for several examples that appear in [1]. 
+See `Example_*.m`  files for several examples that appear in [1]. **SpecSolve** functions **diffMeas()**, **intMeas()**, and **rseMeas()** make use of the **Chebfun** software package for computing with functions, available for download at https://www.chebfun.org/.
 
 
 diffMeas()
@@ -26,6 +26,10 @@ infmatMeas()
 ===================
 Computes a smoothed approximation to the spectral measure of a lattice operator `A` acting on square summable sequences.
 
+
+rseMeas()
+===================
+Computes a smoothed approximation to the spectral measure of radial Schrodinger operators. See **radialSchrodinger_example.m** for a worked example.
 
 References
 ===================
