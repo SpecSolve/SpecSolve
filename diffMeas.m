@@ -87,7 +87,7 @@ if p.Results.Parallel=="off"
     for i=1:length(X)
         u_coeffs=zeros(size(F_coeffs));
         for ii=1:p.Results.Order
-            u_coeffs=u_coeffs+alpha(ii)*((L-(X(i)+pts(ii)*epsilon)*I)\F_coeffs);
+            u_coeffs=u_coeffs+conj(alpha(ii))*((L-(X(i)-conj(pts(ii))*epsilon)*I)\F_coeffs);
         end
         mu(i)=imag(G_coeffs'*u_coeffs)/pi;
         parfor_progress(pf);
@@ -96,7 +96,7 @@ else
     parfor i=1:length(X)
         u_coeffs=zeros(size(F_coeffs));
         for ii=1:p.Results.Order
-            u_coeffs=u_coeffs+alpha(ii)*((L-(X(i)+pts(ii)*epsilon)*I)\F_coeffs);
+            u_coeffs=u_coeffs+conj(alpha(ii))*((L-(X(i)-conj(pts(ii))*epsilon)*I)\F_coeffs);
         end
         mu(i)=imag(G_coeffs'*u_coeffs)/pi;
         parfor_progress(pf);
