@@ -34,7 +34,7 @@ Computes a smoothed approximation to the spectral measure of radial Schrodinger 
 References
 ===================
 
-[1] M. J. Colbrook, A. Horning, and A. Townsend. "Computing spectral measures of self-adjoint operators." arXiv preprint. 
+[1] M. J. Colbrook, A. Horning, and A. Townsend. "Computing spectral measures of self-adjoint operators." arXiv preprint arXiv:2006.01766v1, 2020. 
 
 [2] M. J. Colbrook. "Computing spectral measures and spectral types." arXiv preprint arXiv:1908.06721v2, 2019.
 
