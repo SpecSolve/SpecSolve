@@ -52,18 +52,18 @@ if issparse(A)
         for j=1:L
             a=zeros(size(A,2),1);
             for mm=1:p.Results.Order
-                a=a+res(mm)*((A-(X(j)+epsilon*poles(mm))*speye(size(A)))\b);
+                a=a+res(mm)*((A-(X(j)-epsilon*poles(mm))*speye(size(A)))\b);
             end
-            mu(j)=imag(b(1:size(A,2))'*a)/pi;
+            mu(j)=-imag(b(1:size(A,2))'*a)/pi;
             parfor_progress(pf);
         end
     else
         parfor j=1:L
             a=zeros(size(A,2),1);
             for mm=1:p.Results.Order
-                a=a+res(mm)*((A-(X(j)+epsilon*poles(mm))*speye(size(A)))\b);
+                a=a+res(mm)*((A-(X(j)-epsilon*poles(mm))*speye(size(A)))\b);
             end
-            mu(j)=imag(b(1:size(A,2))'*a)/pi;
+            mu(j)=-imag(b(1:size(A,2))'*a)/pi;
             parfor_progress(pf);
         end
     end
@@ -72,18 +72,18 @@ else
         for j=1:L
             a=zeros(size(A,2),1);
             for mm=1:p.Results.Order
-                a=a+res(mm)*((A-(X(j)+epsilon*poles(mm))*eye(size(A)))\b);
+                a=a+res(mm)*((A-(X(j)-epsilon*poles(mm))*eye(size(A)))\b);
             end
-            mu(j)=imag(b(1:size(A,2))'*a)/pi;
+            mu(j)=-imag(b(1:size(A,2))'*a)/pi;
             parfor_progress(pf);
         end
     else
         parfor j=1:L
             a=zeros(size(A,2),1);
             for mm=1:p.Results.Order
-                a=a+res(mm)*((A-(X(j)+epsilon*poles(mm))*eye(size(A)))\b);
+                a=a+res(mm)*((A-(X(j)-epsilon*poles(mm))*eye(size(A)))\b);
             end
-            mu(j)=imag(b(1:size(A,2))'*a)/pi;
+            mu(j)=-imag(b(1:size(A,2))'*a)/pi;
             parfor_progress(pf);
         end
     end

@@ -66,28 +66,28 @@ if p.Results.Parallel=="off"
     for n=1:length(X)
         u=zeros(N,1);
         for j=1:p.Results.Order
-            z=X(n)+epsilon*poles(j);
+            z=X(n)-epsilon*poles(j);
             u1=f_vals./(M_a-z);
             u2=M_Gc./(M_a-z);
             u=u+res(j)*(u1-u2*((Gd_inv+M_Gr*u2)\(M_Gr*u1)));
         end
 
         %Compute inner product with Clenshaw-Curtis quadrature
-        mu(n)=imag(ccw*(u.*conj(f_vals)))/pi;
+        mu(n)=-imag(ccw*(u.*conj(f_vals)))/pi;
         parfor_progress(pf);
     end
 else
     parfor n=1:length(X)
         u=zeros(N,1);
         for j=1:p.Results.Order
-            z=X(n)+epsilon*poles(j);
+            z=X(n)-epsilon*poles(j);
             u1=f_vals./(M_a-z);
             u2=M_Gc./(M_a-z);
             u=u+res(j)*(u1-u2*((Gd_inv+M_Gr*u2)\(M_Gr*u1)));
         end
 
         %Compute inner product with Clenshaw-Curtis quadrature
-        mu(n)=imag(ccw*(u.*conj(f_vals)))/pi;
+        mu(n)=-imag(ccw*(u.*conj(f_vals)))/pi;
         parfor_progress(pf);
     end
 end

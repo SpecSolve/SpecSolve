@@ -93,23 +93,23 @@ if p.Results.Parallel=="off"
         for n=1:length(X)
             u_coeffs=zeros(size(rhs));
             for m=1:p.Results.Order
-                z=X(n)+pts(m)*epsilon;
+                z=X(n)-pts(m)*epsilon;
                 u_coeffs1=(H-z*S)\rhs; c=(H-z*S)\a;
                 u_coeffs=u_coeffs+alpha(m)*(u_coeffs1-(b*u_coeffs1)*c/(1+b*c));
             end
             u_vals=chebtech1.coeffs2vals(u_coeffs);     %values for inner prod.
-            mu(n)=imag(f_vals*u_vals)/pi;              %inner product
+            mu(n)=-imag(f_vals*u_vals)/pi;              %inner product
             parfor_progress(pf);
         end
     else        %Sparse LU for banded solves.
         for n=1:length(X)
             u_coeffs=zeros(size(rhs));
             for m=1:p.Results.Order
-                z=X(n)+pts(m)*epsilon;
+                z=X(n)-pts(m)*epsilon;
                 u_coeffs=u_coeffs+alpha(m)*((H-z*S)\rhs);
             end
             u_vals=chebtech1.coeffs2vals(u_coeffs);     %values for inner product
-            mu(n)=imag(f_vals*u_vals)/pi;              %inner product
+            mu(n)=-imag(f_vals*u_vals)/pi;              %inner product
             parfor_progress(pf);
         end
     end
@@ -118,21 +118,21 @@ else
         parfor n=1:length(X)
             u_coeffs=zeros(size(rhs));
             for m=1:p.Results.Order
-                u_coeffs1=(H-(X(n)+pts(m)*epsilon)*S)\rhs; c=(H-(X(n)+pts(m)*epsilon)*S)\a;
+                u_coeffs1=(H-(X(n)-pts(m)*epsilon)*S)\rhs; c=(H-(X(n)-pts(m)*epsilon)*S)\a;
                 u_coeffs=u_coeffs+alpha(m)*(u_coeffs1-(b*u_coeffs1)*c/(1+b*c));
             end
             u_vals=chebtech1.coeffs2vals(u_coeffs);     %values for inner prod.
-            mu(n)=imag(f_vals*u_vals)/pi;              %inner product
+            mu(n)=-imag(f_vals*u_vals)/pi;              %inner product
             parfor_progress(pf);
         end
     else        %Sparse LU for banded solves.
         parfor n=1:length(X)
             u_coeffs=zeros(size(rhs));
             for m=1:p.Results.Order
-                u_coeffs=u_coeffs+alpha(m)*((H-(X(n)+pts(m)*epsilon)*S)\rhs);
+                u_coeffs=u_coeffs+alpha(m)*((H-(X(n)-pts(m)*epsilon)*S)\rhs);
             end
             u_vals=chebtech1.coeffs2vals(u_coeffs);     %values for inner product
-            mu(n)=imag(f_vals*u_vals)/pi;              %inner product
+            mu(n)=-imag(f_vals*u_vals)/pi;              %inner product
             parfor_progress(pf);
         end
     end
