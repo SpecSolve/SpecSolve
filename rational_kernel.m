@@ -18,15 +18,31 @@ elseif type=="equi"
     z=1i+(2*(1:m)/(m+1)-1);
 end
 
-%Vandermonde matrix for poles
-V=zeros(m);
-for i=1:m 
-    V(:,i)=z.^(i-1);
+if type=="equi" && m<7 %Hard-coded kernels from table of the paper
+    if m==1
+        res=1;
+    elseif m==2
+        res=[(1+3i)/2;(1-3i)/2];
+    elseif m==3
+        res=[-2+1i;5;-2-1i];
+    elseif m==4
+        res=[(-39-65i)/24;(17+85i)/8;(17-85i)/8;(-39+65i)/24];
+    elseif m==5
+        res=[(15-10i)/4;(-39+13i)/2;(65)/2;(-39-13i)/2;(15+10i)/4];
+    else
+        res=[(725+1015i)/(192);(-2775-6475i)/(192);(1073+7511i)/(96);(1073-7511i)/(96);(-2775+6475i)/(192);(725-1015i)/(192)];
+    end
+else %Vandermonde matrix for poles
+    V=zeros(m);
+    for i=1:m 
+        V(:,i)=(z).^(i-1);
+    end
+
+    %Get residues directly
+    rhs=eye(m,1);
+    res=transpose(V)\rhs;
 end
 
-%Get residues directly
-rhs=eye(m,1);
-res=transpose(V)\rhs;
 poles=z;
 
 end
