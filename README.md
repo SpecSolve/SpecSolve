@@ -9,6 +9,8 @@ A MATLAB implementation for computing spectral measures of self-adjoint operator
 
 (3) Infinite matrices, with finite bandwidth or rapid off-diagonal decay [2].
 
+(4) General function handles for computing the resolvent and inner products.
+
 See `Example_*.m`  files for several examples that appear in [1]. **SpecSolve** functions **diffMeas()**, **intMeas()**, and **rseMeas()** make use of the **Chebfun** software package for computing with functions, available for download at https://www.chebfun.org/.
 
 
@@ -30,6 +32,10 @@ Computes a smoothed approximation to the spectral measure of a lattice operator 
 rseMeas()
 ===================
 Computes a smoothed approximation to the spectral measure of radial Schrodinger operators. See `Example_radialSchrodinger.m` for a worked example.
+
+genMeas()
+===================
+Computes a smoothed approximation to the spectral measure given function handles for the resolvent and inner products.
 
 References
 ===================
