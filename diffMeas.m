@@ -1,4 +1,4 @@
-function [mu] = diffMeas(a,f,X,epsilon,N,varargin)%M_max,scale,Ktype)
+function [mu] = diffMeas(a,f,X,epsilon,N,varargin)
 % This code computes smoothed spectral measures of ODEs on real line.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % INPUTS
