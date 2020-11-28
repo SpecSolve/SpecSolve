@@ -1,4 +1,4 @@
-function [mu] = genMeas(RESOL,INNER,X,epsilon,varargin)%M_max,scale,Ktype)
+function [mu] = genMeas(RESOL,INNER,X,epsilon,varargin)
 % This code computes smoothed spectral measures of ODEs on real line.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % INPUTS
