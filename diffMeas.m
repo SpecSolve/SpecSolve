@@ -33,7 +33,7 @@ checkPole = @(x) any(validatestring(x,validPole));
 validPar = {'on','off'};
 checkPar = @(x) any(validatestring(x,validPar));
 
-addParameter(p,'Band_max',200,@(x) x>0)
+addParameter(p,'Band_max',min(200,N),@(x) x>0)
 addParameter(p,'Scale',10,@(x) x>0)
 addParameter(p,'PoleType','equi',checkPole)
 addParameter(p,'Parallel','off',checkPar)
