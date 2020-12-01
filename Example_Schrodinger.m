@@ -1,20 +1,16 @@
-% This example computes spectral measure of Schrodinger operator on real line.
+% Experiment 1: spectral measure of Schrodinger operator on real line
+X=0:0.05:6;                                     %Evaluation pts
+f=@(x) x.^2./(1+x.^6)*sqrt(9/pi);               %Measure wrt f(r)
+a={@(x) x.^2./(1+x.^6), @(x) 0*x, @(x) -1+0*x}; %Schrodinger op
 
-clear
-% close all
-a=cell(3,1); % these specify the coefficients
-a{1}=@(x) x.^2./(1+x.^6); % 0th order
-a{2}=@(x) 0*x; % 1st order
-a{3}=@(x) -1+0*x; % 2nd order
-
-f=@(x) x.^2./(1+x.^6)*sqrt(9/pi); % function we compute measure wrt
-X=0:0.05:6; % points where we compute smoothed measure
-epsilon=0.1; % smoothing parameter
-N=10^4; % truncation parameter
-
-mu1=diffMeas(a,f,X,epsilon,N,'order',1,'parallel','on');
-mu2=diffMeas(a,f,X,epsilon,N,'order',2,'parallel','on');
-mu6=diffMeas(a,f,X,epsilon,N,'order',6,'parallel','on');
+tic
+mu1=diffMeas(a,f,X,0.1,'order',1,'N',10^4);  %epsilon=0.1, m=1
+t1=toc;
+mu2=diffMeas(a,f,X,0.1,'order',2,'N',10^4); %epsilon=0.1, m=2
+t2=toc;
+mu6=diffMeas(a,f,X,0.1,'order',6,'N',10^4); %epsilon=0.1, m=6
+t3=toc;
+t_min=(t1+t2+t3)/60
 
 %% Plot
 figure
