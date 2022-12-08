@@ -40,7 +40,9 @@ Computes a smoothed approximation to the spectral measure given function handles
 References
 ===================
 
-[1] M. J. Colbrook, A. Horning, and A. Townsend. "Computing spectral measures of self-adjoint operators." arXiv preprint arXiv:2006.01766v1, 2020. 
+[1] M. J. Colbrook, A. Horning, and A. Townsend. "Computing spectral measures of self-adjoint operators." SIAM Review 63.3 (2021): 489-524.
 
-[2] M. J. Colbrook. "Computing spectral measures and spectral types." arXiv preprint arXiv:1908.06721v2, 2019.
+[2] M. J. Colbrook. "Computing spectral measures and spectral types." Communications in Mathematical Physics 384.1 (2021): 433-501.
+
+[3] M. J. Colbrook, A. Horning, "SpecSolve: Spectral methods for spectral measures," ICOSAHOM, 2022.
 
