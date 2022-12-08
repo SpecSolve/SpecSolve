@@ -44,5 +44,5 @@ References
 
 [2] M. J. Colbrook. "Computing spectral measures and spectral types." Communications in Mathematical Physics 384.1 (2021): 433-501.
 
-[3] M. J. Colbrook, A. Horning, "SpecSolve: Spectral methods for spectral measures." ICOSAHOM, 2022.
+[3] M. J. Colbrook, A. Horning. "SpecSolve: Spectral methods for spectral measures." ICOSAHOM (2022).
 
